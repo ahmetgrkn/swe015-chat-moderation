@@ -1,0 +1,108 @@
+{
+  "results": [
+    {
+      "model": "Edit-distance rules",
+      "macro_f1": 0.5122637834582134,
+      "size_mb": 9.2e-05,
+      "latency_ms": 0.18402968680675258,
+      "latency_runs": 128,
+      "confusion": [
+        [
+          132,
+          36
+        ],
+        [
+          411,
+          421
+        ]
+      ]
+    },
+    {
+      "model": "TF-IDF",
+      "macro_f1": 0.8657111413897914,
+      "size_mb": 0.140542,
+      "latency_ms": 0.24213593701460923,
+      "latency_runs": 128,
+      "confusion": [
+        [
+          147,
+          21
+        ],
+        [
+          61,
+          771
+        ]
+      ]
+    },
+    {
+      "model": "Word2Vec + MLP",
+      "macro_f1": 0.6161643465333153,
+      "size_mb": 1.378157,
+      "latency_ms": 0.09672343639977043,
+      "latency_runs": 128,
+      "confusion": [
+        [
+          103,
+          65
+        ],
+        [
+          219,
+          613
+        ]
+      ]
+    },
+    {
+      "model": "BERT Tiny",
+      "macro_f1": 0.8911629007452975,
+      "size_mb": 18.50331,
+      "latency_ms": 1.3528914046219143,
+      "latency_runs": 128,
+      "confusion": [
+        [
+          163,
+          5
+        ],
+        [
+          64,
+          768
+        ]
+      ]
+    },
+    {
+      "model": "BERT Tiny INT8",
+      "macro_f1": 0.8939119722714397,
+      "size_mb": 17.287517,
+      "latency_ms": 1.770945312728145,
+      "latency_runs": 128,
+      "confusion": [
+        [
+          163,
+          5
+        ],
+        [
+          62,
+          770
+        ]
+      ]
+    }
+  ],
+  "train": {
+    "0": 771,
+    "1": 3829
+  },
+  "test": {
+    "0": 168,
+    "1": 832
+  },
+  "eligible_rows": 24505,
+  "cpu": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "os": "Windows-11-10.0.26300-SP0",
+  "torch_threads": 2,
+  "seed": 42,
+  "data_url": "https://raw.githubusercontent.com/t-davidson/hate-speech-and-offensive-language/master/data/labeled_data.csv",
+  "failure": {
+    "text": "my nig kkeldalegend took me out for some more of that good old new orleans soul food!",
+    "actual": 0,
+    "predicted": 1
+  }
+}
