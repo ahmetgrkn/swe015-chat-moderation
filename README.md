@@ -29,8 +29,8 @@ python app.py
 
 Open the local address printed in the terminal. Try "Thanks for helping with
 that round!" and "you are such an iiiidi0t". Select a different model and repeat
-the same message to compare predictions. Keep generated `models/` private to
-your local checkout or rebuild them using the training command.
+the same message to compare predictions. In the demo, INT8 BERT missed the
+misspelled insult. TF-IDF flagged it and the chat displayed "[Message masked]".
 
 ## Data and evaluation
 
@@ -47,7 +47,8 @@ your local checkout or rebuild them using the training command.
   and inference and exclude Gradio and model loading. Sizes count serialized
   model files and their inference metadata, using decimal MB.
 
-Training writes the measured results to `models/results.json`. This prototype
-classifies isolated messages. Quoted insults, dialect, and game-specific
-language can produce classification errors. Confidence is the model's score
-and has not been calibrated as an error probability.
+The test set contains 168 clean tweets and 832 offensive ones. INT8 BERT
+flagged five clean tweets and missed 62 offensive ones. It had the highest
+macro F1 (0.894), although the demo shows one message where TF-IDF did better.
+See [the measured results](models/results.json) for the full comparison.
+The next question is how well these models work on real game chat.
